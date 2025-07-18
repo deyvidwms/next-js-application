@@ -6,7 +6,13 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:start": "docker-compose up -d",
+    "db:stop": "docker-compose down",
+    "db:restart": "docker-compose restart",
+    "db:logs": "docker-compose logs postgres",
+    "db:reset": "docker-compose down -v && docker-compose up -d",
+    "db:connect": "docker-compose exec postgres psql -U myapp_user -d myapp_db"
   },
   "dependencies": {
     "react": "19.1.0",
